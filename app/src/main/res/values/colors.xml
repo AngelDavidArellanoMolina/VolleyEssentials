@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Colores básicos -->
+    <color name="red">#FFFF0000</color>
+    <color name="green">#FF00FF00</color>
+    <color name="blue">#FF0000FF</color>
+    <color name="yellow">#FFFFFF00</color>
+    <color name="orange">#FFFFA500</color>
+    <color name="purple">#FF800080</color>
+    <color name="pink">#FFFFC0CB</color>
+    <color name="gray">#FF808080</color>
+    <color name="brown">#FFA52A2A</color>
+
+    <!-- Tonos de colores básicos -->
+    <color name="light_red">#FFFFCCCC</color>
+    <color name="light_green">#FFCCFFCC</color>
+    <color name="light_blue">#FFCCCCFF</color>
+    <color name="light_yellow">#FFFFFFCC</color>
+    <color name="light_orange">#FFFFD8A5</color>
+    <color name="light_purple">#FFC080C0</color>
+    <color name="light_pink">#FFFFE4E1</color>
+    <color name="light_gray">#FFD3D3D3</color>
+    <color name="light_brown">#FFD2691E</color>
+
+    <!-- Colores pastel -->
+    <color name="pastel_azul">#FFB2EBF2</color>
+    <color name="pastel_rosa">#FFF8BBD0</color>
+    <color name="pastel_rosa_claro">#FFF0D9CE</color>
+    <color name="pastel_verde">#FFC5E1A5</color>
+    <color name="pastel_amarillo">#FFFFE082</color>
+    <color name="pastel_rosa_fuerte">#FFCE93D8</color>
+    <color name="pastel_naranja">#FFFFCC80</color>
+    <color name="pastel_menta">#FF80CBC4</color>
+    <color name="pastel_marron">#FFA1887F</color>
+
+    <!-- Tonos de beige -->
+    <color name="beige_light">#FFF5F5DC</color>
+    <color name="beige_medium">#FFD2B48C</color>
+    <color name="beige_dark">#FFA0522D</color>
+
+    <!-- Tonos de gris -->
+    <color name="gray_light">#FFD3D3D3</color>
+    <color name="gray_medium">#FF808080</color>
+    <color name="gray_dark">#FF404040</color>
+
+    <!-- Colores pista volley -->
+    <color name="azul_pista">#046c7c</color>
+</resources>

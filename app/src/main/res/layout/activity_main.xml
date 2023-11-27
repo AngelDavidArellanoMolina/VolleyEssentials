@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@color/azul_pista">
+
+    <RelativeLayout
+        android:id="@+id/fieldLayout"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@color/azul_pista"
+        android:layout_alignParentTop="true">
+
+        <!-- Contenedor para los jugadores -->
+        <RelativeLayout
+            android:id="@+id/pista_juego"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/volleyball_field"
+            android:layout_marginHorizontal="20dp"
+            android:gravity="center_vertical">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="5dp"
+                android:layout_marginBottom="5dp"
+                android:columnCount="3"
+                android:rowCount="2">
+
+                <ImageView
+                    android:id="@+id/player4"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/player_image" />
+
+                <ImageView
+                    android:id="@+id/player3"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/player_image" />
+
+                <ImageView
+                    android:id="@+id/player2"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/player_image" />
+
+                <ImageView
+                    android:id="@+id/player5"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/player_image" />
+
+                <ImageView
+                    android:id="@+id/player6"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/player_image" />
+
+                <ImageView
+                    android:id="@+id/player1"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_margin="10dp"
+                    android:src="@drawable/player_image" />
+            </GridLayout>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/banquillo_jugadores"
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/beige_light"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            android:gravity="center"
+        >
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <!-- Botón para agregar jugador -->
+    <Button
+        android:id="@+id/btnAddPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Agregar Jugador"
+        android:layout_marginBottom="50dp"
+        android:onClick="agregarJugador"
+        android:background="@color/beige_medium"
+        />
+    <TextView
+        android:id="@+id/numero_jugadores"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:textColor="@color/black"
+        android:layout_alignParentBottom="true"
+        android:textAlignment="center"
+        />
+</RelativeLayout>
