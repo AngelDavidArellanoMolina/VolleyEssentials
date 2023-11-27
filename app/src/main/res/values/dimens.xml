@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="player_width">100dp</dimen>
-    <dimen name="player_height">100dp</dimen>
+    <dimen name="player_width">75dp</dimen>
+    <dimen name="player_height">75dp</dimen>
+    <dimen name="card_width">100dp</dimen>
+    <dimen name="text_margin_top">8dp</dimen>
 </resources>
