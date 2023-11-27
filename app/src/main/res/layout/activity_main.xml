@@ -13,7 +13,7 @@
         android:background="@color/azul_pista"
         android:layout_alignParentTop="true">
 
-        <!-- Contenedor para los jugadores -->
+        <!-- Contenedor para los jugadores en la pista -->
         <RelativeLayout
             android:id="@+id/pista_juego"
             android:layout_width="match_parent"
@@ -39,7 +39,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
-                    android:src="@drawable/player_image" />
+                    android:src="@drawable/players_image" />
 
                 <ImageView
                     android:id="@+id/player3"
@@ -47,7 +47,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
-                    android:src="@drawable/player_image" />
+                    android:src="@drawable/players_image" />
 
                 <ImageView
                     android:id="@+id/player2"
@@ -55,7 +55,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
-                    android:src="@drawable/player_image" />
+                    android:src="@drawable/players_image" />
 
                 <ImageView
                     android:id="@+id/player5"
@@ -63,7 +63,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
-                    android:src="@drawable/player_image" />
+                    android:src="@drawable/players_image" />
 
                 <ImageView
                     android:id="@+id/player6"
@@ -71,7 +71,7 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
-                    android:src="@drawable/player_image" />
+                    android:src="@drawable/players_image" />
 
                 <ImageView
                     android:id="@+id/player1"
@@ -79,21 +79,30 @@
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
                     android:layout_margin="10dp"
-                    android:src="@drawable/player_image" />
+                    android:src="@drawable/players_image" />
+
             </GridLayout>
 
         </RelativeLayout>
 
-        <LinearLayout
-            android:id="@+id/banquillo_jugadores"
+        <!-- Contenedor horizontal con scroll para el banquillo -->
+        <HorizontalScrollView
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            android:background="@color/beige_light"
+            android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:orientation="horizontal"
-            android:gravity="center"
-        >
-        </LinearLayout>
+            android:layout_below="@id/pista_juego">
+
+            <LinearLayout
+                android:id="@+id/banquillo_jugadores"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="@color/beige_light"
+                android:orientation="horizontal"
+                android:gravity="center">
+                <!-- Jugadores añadidos se agregarán dinámicamente aquí -->
+            </LinearLayout>
+
+        </HorizontalScrollView>
 
     </RelativeLayout>
 
@@ -117,4 +126,5 @@
         android:layout_alignParentBottom="true"
         android:textAlignment="center"
         />
+
 </RelativeLayout>

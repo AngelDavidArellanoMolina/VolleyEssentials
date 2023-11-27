@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
                     getResources().getDimensionPixelSize(R.dimen.player_width),
                     getResources().getDimensionPixelSize(R.dimen.player_height)
             ));
-            nuevoJugador.setImageResource(R.drawable.player_image);
+            nuevoJugador.setImageResource(R.drawable.players_image);
 
             // Asignar un nuevo ID único al jugador
             nuevoJugador.setId(View.generateViewId());
@@ -81,15 +81,6 @@ public class MainActivity extends AppCompatActivity {
             // Incrementar el contador de jugadores
             jugadorCount++;
             num_jugadores.setText(String.valueOf(jugadorCount));
-
-            // Asignar el evento onTouch solo para los jugadores en la pista
-            nuevoJugador.setOnTouchListener(new View.OnTouchListener() {
-                @Override
-                public boolean onTouch(View v, MotionEvent event) {
-                    onTouchEvent(nuevoJugador, event);
-                    return true;
-                }
-            });
         }
     }
 
