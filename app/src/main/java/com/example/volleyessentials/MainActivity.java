@@ -148,12 +148,12 @@ public class MainActivity extends AppCompatActivity {
                         nombreTextView.setText(jugador.getNombre());
                         dorsalJugador.setText(String.valueOf(jugador.getDorsal()));
 
+                        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                                ViewGroup.LayoutParams.WRAP_CONTENT,
+                                ViewGroup.LayoutParams.WRAP_CONTENT
+                        );
 
-                        if (jugadoresEnPista.size() < 6){
-                            RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
-                                    ViewGroup.LayoutParams.WRAP_CONTENT,
-                                    ViewGroup.LayoutParams.WRAP_CONTENT
-                            );
+                        if (jugadoresEnPista.size() < 7){
                             gridJugadores.addView(card_jugador, params);
                             card_jugador.setOnTouchListener(new View.OnTouchListener() {
                                 @Override
@@ -163,7 +163,8 @@ public class MainActivity extends AppCompatActivity {
                                     return true;
                                 }
                             });
-
+                        } else {
+                            banquillo.addView(card_jugador, params);
                         }
                     }
                 }
