@@ -40,7 +40,6 @@ public class MainActivity extends AppCompatActivity {
     private List<Jugador> jugadoresEnPista = new ArrayList<>();
     private List<Jugador> jugadoresTotales = new ArrayList<>();
     private int jugadorCount = 0;
-    private TextView num_jugadores;
     private RelativeLayout field;
     private GridLayout gridJugadores;
 
@@ -52,10 +51,8 @@ public class MainActivity extends AppCompatActivity {
         final CardView player = findViewById(R.id.card_player);
         field = findViewById(R.id.pista_juego);
         gridJugadores = findViewById(R.id.grid_jugadoresPista);
-        num_jugadores = findViewById(R.id.numero_jugadores);
-        num_jugadores.setText(String.valueOf(jugadorCount));
-        banquillo = findViewById(R.id.banquillo_jugadores);
 
+        banquillo = findViewById(R.id.banquillo_jugadores);
 
     }
 
