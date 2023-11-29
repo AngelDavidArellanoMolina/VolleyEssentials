@@ -74,7 +74,7 @@
 
     <View
         android:id="@+id/marcador_local_view"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="125dp"
         android:background="@drawable/marcador_puntos"
         app:layout_constraintTop_toTopOf="@id/marcador"
@@ -89,7 +89,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00"
-        android:textSize="100dp"
+        android:textSize="85dp"
         android:textColor="@color/light_blue"
         android:fontFamily="@font/digital_font"
         app:layout_constraintTop_toTopOf="@id/marcador_local_view"
@@ -121,7 +121,7 @@
         android:layout_height="wrap_content"
         android:text="0"
         android:textSize="40dp"
-        android:textColor="@color/light_blue"
+        android:textColor="@color/white"
         android:fontFamily="@font/digital_font"
         app:layout_constraintTop_toTopOf="@id/marcador"
         app:layout_constraintBottom_toBottomOf="@id/marcador"
@@ -150,9 +150,9 @@
         android:id="@+id/marcador_visitante_sets_nums"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="1"
+        android:text="0"
         android:textSize="40dp"
-        android:textColor="@color/light_blue"
+        android:textColor="@color/white"
         android:fontFamily="@font/digital_font"
         app:layout_constraintTop_toTopOf="@id/marcador"
         app:layout_constraintBottom_toBottomOf="@id/marcador"
@@ -163,7 +163,7 @@
 
     <View
         android:id="@+id/marcador_visitante_view"
-        android:layout_width="125dp"
+        android:layout_width="110dp"
         android:layout_height="125dp"
         android:background="@drawable/marcador_puntos"
         app:layout_constraintTop_toTopOf="@id/marcador"
@@ -178,8 +178,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="00"
-        android:textSize="100dp"
-        android:textColor="@color/light_blue"
+        android:textSize="85dp"
+        android:textColor="@color/light_red"
         android:fontFamily="@font/digital_font"
         app:layout_constraintTop_toTopOf="@id/marcador_visitante_view"
         app:layout_constraintBottom_toBottomOf="@id/marcador_visitante_view"
@@ -187,7 +187,6 @@
         app:layout_constraintEnd_toEndOf="@id/marcador_visitante_view"
         android:elevation="5dp"
         />
-
 
     <!-- Botones de acción -->
     <LinearLayout
@@ -200,32 +199,79 @@
         android:layout_margin="15dp"
         android:elevation="5dp">
 
-    <View
-        android:id="@+id/btnAddPlayer"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:onClick="agregarJugador"
-        android:background="@drawable/botones_interface"
-        android:layout_marginHorizontal="5dp"
-        />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            >
 
-    <View
-        android:id="@+id/btnDltPlayer"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:onClick="agregarJugador"
-        android:background="@drawable/botones_interface"
-        android:layout_marginHorizontal="5dp"
-        />
+            <View
+                android:id="@+id/btnAddPlayer"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:onClick="agregarJugador"
+                android:background="@drawable/botones_interface"
+                />
 
-    <View
-        android:id="@+id/btnRtrn"
-        android:layout_width="65dp"
-        android:layout_height="65dp"
-        android:onClick="agregarJugador"
-        android:background="@drawable/botones_interface"
-        android:layout_marginHorizontal="5dp"
-        />
+            <ImageView
+                android:id="@+id/imagen_añadir_jugador"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/usuarios"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            >
+
+            <View
+                android:id="@+id/btnDltPlayer"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:onClick="agregarJugador"
+                android:background="@drawable/botones_interface"
+                android:layout_marginHorizontal="5dp"
+                />
+
+            <ImageView
+                android:id="@+id/imagen_eliminar_jugador"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/usuarios"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5dp"
+            >
+
+            <View
+                android:id="@+id/btnRtrn"
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:onClick="agregarJugador"
+                android:background="@drawable/botones_interface"
+                android:layout_marginHorizontal="5dp"
+                />
+
+            <ImageView
+                android:id="@+id/imagen_intercambiar_jugador"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/usuarios"
+                android:layout_gravity="center"
+                />
+
+        </FrameLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

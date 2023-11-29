@@ -19,9 +19,9 @@
     <color name="brown">#FFA52A2A</color>
 
     <!-- Tonos de colores básicos -->
-    <color name="light_red">#FFFFCCCC</color>
+    <color name="light_red">#FF8080</color>
     <color name="light_green">#FFCCFFCC</color>
-    <color name="light_blue">#FFCCCCFF</color>
+    <color name="light_blue">#8080FF</color>
     <color name="light_yellow">#FFFFFFCC</color>
     <color name="light_orange">#FFFFD8A5</color>
     <color name="light_purple">#FFC080C0</color>
