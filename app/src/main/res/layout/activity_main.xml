@@ -64,13 +64,15 @@
         android:id="@+id/marcador"
         android:layout_width="0dp"
         android:layout_height="150dp"
-        android:background="@color/brown"
+        android:background="@color/dark_bg2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_margin="15dp"
         />
+
     <Button
+        android:id="@+id/marcador_local"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:text="01"
@@ -83,7 +85,35 @@
         app:layout_constraintStart_toStartOf="@id/marcador"
         android:layout_margin="15dp"
         />
+
     <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="10"
+        android:textSize="100dp"
+        android:background="@drawable/marcador_azul"
+        android:textColor="@color/light_blue"
+        android:fontFamily="@font/digital_font"
+        app:layout_constraintTop_toTopOf="@id/marcador"
+        app:layout_constraintBottom_toBottomOf="@id/marcador"
+        app:layout_constraintStart_toEndOf="@id/marcador_local"
+        />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:text="10"
+        android:textSize="100dp"
+        android:background="@drawable/marcador_azul"
+        android:textColor="@color/light_blue"
+        android:fontFamily="@font/digital_font"
+        app:layout_constraintTop_toTopOf="@id/marcador"
+        app:layout_constraintBottom_toBottomOf="@id/marcador"
+        app:layout_constraintEnd_toStartOf="@id/visitante"
+        />
+
+    <Button
+        android:id="@+id/visitante"
         android:layout_width="125dp"
         android:layout_height="125dp"
         android:text="10"
@@ -103,24 +133,11 @@
         android:id="@+id/btnAddPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Agregar Jugador"
         android:onClick="agregarJugador"
-        android:background="@color/beige_medium"
+        android:background="@drawable/botones_interface"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fieldLayout"
         />
-
-    <Button
-        android:id="@+id/btnIntercambiar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:text="Intercambiar Jugadores"
-        android:background="@color/beige_medium"
-        app:layout_constraintTop_toBottomOf="@id/btnAddPlayer"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

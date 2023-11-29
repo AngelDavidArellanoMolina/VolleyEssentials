@@ -47,8 +47,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        final CardView player = findViewById(R.id.card_player);
         field = findViewById(R.id.pista_juego);
         gridJugadores = findViewById(R.id.grid_jugadoresPista);
 
@@ -81,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
             EditText nombreIntroducido = popupView.findViewById(R.id.nombreIntroducido);
             EditText dorsalIntroducido = popupView.findViewById(R.id.dorsalIntroducido);
             RadioGroup posicionElegida = popupView.findViewById(R.id.posiciónElegida);
-
             Button botonAñadir = popupView.findViewById(R.id.botonAñadir);
+
             botonAñadir.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -115,10 +113,6 @@ public class MainActivity extends AppCompatActivity {
                         jugadoresTotales.add(jugador);
                         jugadoresEnPista.add(jugador);
 
-                        for (Jugador j : jugadoresTotales) {
-                            System.out.println(j);
-                        }
-
                         dialog.dismiss();
 
                         View card_jugador = getLayoutInflater().inflate(R.layout.cardview_player, null);
@@ -135,10 +129,10 @@ public class MainActivity extends AppCompatActivity {
                                 imagenJugador.setImageResource(R.drawable.player_image);
                                 break;
                             case Central:
-                                imagenJugador.setImageResource(R.drawable.players_image);
+                                imagenJugador.setImageResource(R.drawable.player_image);
                                 break;
                             case Líbero:
-                                imagenJugador.setImageResource(R.drawable.players_image);
+                                imagenJugador.setImageResource(R.drawable.player_image);
                                 break;
                         }
 
