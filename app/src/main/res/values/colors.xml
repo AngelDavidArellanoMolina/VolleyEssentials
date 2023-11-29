@@ -5,6 +5,7 @@
     <color name="transparent">#00FFFFFF</color>
     <color name="dark_bg">#121212</color>
     <color name="dark_bg2">#0F0F0F</color>
+    <color name="dark_bg3">#252525</color>
 
     <!-- Colores básicos -->
     <color name="red">#FFFF0000</color>

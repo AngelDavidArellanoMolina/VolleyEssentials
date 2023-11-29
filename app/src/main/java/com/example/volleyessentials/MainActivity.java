@@ -34,17 +34,23 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
     private CardView jugadorSeleccionado;
+    private TextView puntosLocal, puntosVisit, setsLocal, setsVisit;
+
     private float offsetX, offsetY;
-    private RelativeLayout playersContainer;
-    private LinearLayout banquillo;
-    private List<Jugador> jugadoresEnPista = new ArrayList<>();
-    private List<Jugador> jugadoresTotales = new ArrayList<>();
     private int jugadorCount = 0;
     private RelativeLayout field;
     private GridLayout gridJugadores;
 
+    private LinearLayout banquillo;
+    private List<Jugador> jugadoresEnPista = new ArrayList<>();
+    private List<Jugador> jugadoresTotales = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        puntosLocal = findViewById(R.id.marcador_local_nums);
+        puntosVisit = findViewById(R.id.marcador_visitante_nums);
+        setsLocal = findViewById(R.id.marcador_local_sets_nums);
+        setsVisit = findViewById(R.id.marcador_visitante_sets_nums);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         field = findViewById(R.id.pista_juego);
@@ -163,6 +169,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void marcador (View view) {
+        puntosLocal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+    }
     private void onTouchEvent_movimiento(View jugadorView, MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
