@@ -35,29 +35,36 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     private CardView jugadorSeleccionado;
     private TextView puntosLocal, puntosVisit, setsLocal, setsVisit;
-
+    private View marcadorLocalView, marcadorVisitView, setsLocalView, setsVisitView;
     private float offsetX, offsetY;
     private int jugadorCount = 0;
+    private boolean ultPunto = true;
+    // True significa que el ultimo punto lo anotó el equipo local
+    // False significa que el ultimo punto lo anotó el equipo visitante
     private RelativeLayout field;
     private GridLayout gridJugadores;
-
     private LinearLayout banquillo;
     private List<Jugador> jugadoresEnPista = new ArrayList<>();
     private List<Jugador> jugadoresTotales = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
         puntosLocal = findViewById(R.id.marcador_local_nums);
         puntosVisit = findViewById(R.id.marcador_visitante_nums);
         setsLocal = findViewById(R.id.marcador_local_sets_nums);
         setsVisit = findViewById(R.id.marcador_visitante_sets_nums);
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+
+        marcadorLocalView = findViewById(R.id.marcador_local_view);
+        marcadorVisitView = findViewById(R.id.marcador_visitante_view);
+        setsLocalView = findViewById(R.id.marcador_sets_local_view);
+        setsVisitView = findViewById(R.id.marcador_sets_visitante_view);
+
         field = findViewById(R.id.pista_juego);
         gridJugadores = findViewById(R.id.grid_jugadoresPista);
-
         banquillo = findViewById(R.id.banquillo_jugadores);
-
     }
 
     public void agregarJugador(View view) {
@@ -151,7 +158,9 @@ public class MainActivity extends AppCompatActivity {
                         );
 
                         if (jugadoresEnPista.size() < 7){
+
                             gridJugadores.addView(card_jugador, params);
+
                             card_jugador.setOnTouchListener(new View.OnTouchListener() {
                                 @Override
                                 public boolean onTouch(View v, MotionEvent event) {
@@ -170,29 +179,89 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void marcador (View view) {
-        puntosLocal.setOnClickListener(new View.OnClickListener() {
+        marcadorLocalView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                int puntos = 0;
+                puntos = Integer.parseInt((String) puntosLocal.getText());
+                puntos++;
+                if (puntos < 10) {
+                    puntosLocal.setText("0"+String.valueOf(puntos));
+                } else {
+                    puntosLocal.setText(String.valueOf(puntos));
+                }
+
+                if (ultPunto != true){
+                    ultPunto = true;
+                    //añadir rotación
+                    intercambiarPosicionesJugadores(0, 0, 1, 0);
+
+                    System.out.println("Rotación");
+                }
+            }
+        });
+        marcadorVisitView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int puntos = 0;
+                puntos = Integer.parseInt((String) puntosVisit.getText());
+                puntos++;
+
+                if (puntos < 10) {
+                    puntosVisit.setText("0"+String.valueOf(puntos));
+                } else {
+                    puntosVisit.setText(String.valueOf(puntos));
+                }
+
+                if (ultPunto = true){
+                    ultPunto = false;
+                }
             }
         });
     }
+
+    private void intercambiarPosicionesJugadores(int fila1, int columna1, int fila2, int columna2) {
+        // Obtener las vistas de los jugadores en las posiciones especificadas
+        CardView jugador1 = (CardView) gridJugadores.getChildAt(fila1 * gridJugadores.getColumnCount() + columna1);
+        CardView jugador2 = (CardView) gridJugadores.getChildAt(fila2 * gridJugadores.getColumnCount() + columna2);
+
+        if (jugador1 != null && jugador2 != null) {
+            // Obtener los parámetros de diseño actuales de ambos jugadores
+            GridLayout.LayoutParams params1 = (GridLayout.LayoutParams) jugador1.getLayoutParams();
+            GridLayout.LayoutParams params2 = (GridLayout.LayoutParams) jugador2.getLayoutParams();
+
+            // Intercambiar las posiciones de los jugadores en el GridLayout
+            params1.rowSpec = GridLayout.spec(fila2);
+            params1.columnSpec = GridLayout.spec(columna2);
+
+            params2.rowSpec = GridLayout.spec(fila1);
+            params2.columnSpec = GridLayout.spec(columna1);
+
+            // Aplicar los nuevos parámetros de diseño
+            jugador1.setLayoutParams(params1);
+            jugador2.setLayoutParams(params2);
+        } else {
+            // Manejar el caso donde una o ambas vistas son nulas
+            Log.e("MainActivity", "Al menos una de las vistas es nula en intercambiarPosicionesJugadores");
+        }
+    }
+
     private void onTouchEvent_movimiento(View jugadorView, MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
                 jugadorSeleccionado = (CardView) jugadorView;
                 offsetX = event.getRawX() - jugadorSeleccionado.getX();
                 offsetY = event.getRawY() - jugadorSeleccionado.getY();
+
                 break;
             case MotionEvent.ACTION_MOVE:
                 if (jugadorSeleccionado != null) {
                     float x = event.getRawX() - offsetX;
                     float y = event.getRawY() - offsetY;
 
-                    // Ajustar la posición del jugadorCardView
                     x = Math.max(0, Math.min(x, field.getWidth() - jugadorSeleccionado.getWidth()));
                     y = Math.max(0, Math.min(y, field.getHeight() - jugadorSeleccionado.getHeight()));
 
-                    // Establecer las nuevas coordenadas del jugadorCardView
                     jugadorSeleccionado.setX(x);
                     jugadorSeleccionado.setY(y);
                 }
@@ -202,5 +271,4 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-
 }
